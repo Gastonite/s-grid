@@ -6,12 +6,12 @@ rem-calc(value)
         return unit(value / base-font-size, 'rem')
     }
 
-grid(direction = 'row', cells-align = 'top', justify = '')
+grid(direction = 'row', cells-align = 'start', justify = '')
     display flex
     flex-wrap wrap
-    if cells-align is 'top'
+    if cells-align is 'start'
         align-items flex-start
-    if cells-align is 'bottom'
+    if cells-align is 'end'
         align-items flex-end
     if cells-align is 'center'
         align-items center
@@ -37,9 +37,9 @@ cell(i = 1, cols = columns, align = '', g = gutter)
     min-width 0 // FF adjustment fo rresponsive images
     if g is not 0
         margin: rem-calc(g / 2)
-    if align is 'top'
+    if align is 'start'
         align-self flex-start
-    if align is 'bottom'
+    if align is 'end'
         align-self flex-end
     if align is 'center'
         align-self center
